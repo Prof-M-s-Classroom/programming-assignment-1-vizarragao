@@ -128,17 +128,15 @@ public:
 
         if (length == 0)
             return;
-        Node<T> *temp = head;
+        Node<T> *temp = getWaypoint(length-1);
+        Node<T> *temp2 = getWaypoint(length-2);
         if (length == 1) {
             head = nullptr;
             tail = nullptr;
-        } else {
-            Node<T> *pre = head;
-            while (temp->next) {
-                pre = temp;
-                temp = temp->next;
-            }
-            tail = pre;
+        }
+        else {
+            tail = temp2;
+            tail->prev= temp2->prev;
             tail->next = nullptr;
         }
         delete temp;
