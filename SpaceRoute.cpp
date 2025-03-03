@@ -121,22 +121,19 @@ public:
     }
 
     void removeWaypointAtEnd() {
-        if (head == nullptr) {
-            cout<<"The list is empty"<<endl;
-            return;
-        }
-
         if (length == 0)
             return;
-        Node<T> *temp = getWaypoint(length-1);
-        Node<T> *temp2 = getWaypoint(length-2);
+        Node<T> *temp = head;
         if (length == 1) {
             head = nullptr;
             tail = nullptr;
-        }
-        else {
-            tail = temp2;
-            tail->prev= temp2->prev;
+        } else {
+            Node<T> *pre = head;
+            while (temp->next) {
+                pre = temp;
+                temp = temp->next;
+            }
+            tail = pre;
             tail->next = nullptr;
         }
         delete temp;

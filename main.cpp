@@ -17,20 +17,20 @@ int main() {
     voyagerRoute.addWaypointAtEnd(jupiter);
     voyagerRoute.addWaypointAtEnd(saturn);
     voyagerRoute.addWaypointAtBeginning(earth);
-    // voyagerRoute.addWaypointAtIndex(2, venus);
+    voyagerRoute.addWaypointAtIndex(2, venus);
 
-    voyagerRoute.removeWaypointAtEnd();
-    // cout << "Voyager Route (Forward):\n";
-    // voyagerRoute.traverseForward();
-    //
-    // cout << "\nVoyager Route (Backward):\n";
-    // voyagerRoute.traverseBackward();
-    //
-    // cout << "\nPrinting Route: \n";
-    // voyagerRoute.print();
-    //
-    //  voyagerRoute.removeWaypointAtIndex(2);
-    // cout << "\nAfter Removing Venus: \n";
+
+    cout << "Voyager Route (Forward):\n";
+    voyagerRoute.traverseForward();
+
+    cout << "\nVoyager Route (Backward):\n";
+    voyagerRoute.traverseBackward();
+
+    cout << "\nPrinting Route: \n";
+    voyagerRoute.print();
+
+     voyagerRoute.removeWaypointAtIndex(2);
+    cout << "\nAfter Removing Venus: \n";
     voyagerRoute.print();
     return 0;
 }
